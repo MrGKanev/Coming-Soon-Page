@@ -1,0 +1,515 @@
+/* Morph Button: Default Styles */
+
+.button {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}
+
+.button > button {
+	position: relative;
+	padding: 0 1em;
+	border: none;
+	background-color: #e85657;
+	color: #f9f6e5;
+	letter-spacing: 1px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.button.open > button {
+	pointer-events: none;
+}
+
+.content {
+	pointer-events: none;
+}
+
+.button.open .content {
+	pointer-events: auto;
+}
+
+/* Common styles for overlay and modal type (fixed morph) */
+.button-fixed, 
+.button-fixed .content {
+  height: 43px;
+  width: 180px;
+}
+
+.button-fixed > button {
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: opacity 0.1s 0.5s;
+	transition: opacity 0.1s 0.5s;
+}
+
+.button-fixed.open > button {
+	opacity: 0;
+	-webkit-transition: opacity 0.1s;
+	transition: opacity 0.1s;
+}
+
+.button-fixed .content {
+	position: fixed;
+	z-index: 900;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+.button-fixed.open .content {
+	opacity: 1;
+}
+
+.button-fixed .content > div {
+	visibility: hidden;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+	transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+}
+
+.button-fixed.open .content > div {
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s 0.5s;
+	transition: opacity 0.3s 0.5s;
+}
+
+.button-fixed.active > button {
+	z-index: 2000;
+}
+
+.button-fixed.active .content {
+	z-index: 1900;
+}
+
+/* Transitions for overlay button and sidebar button */
+.button-overlay .content,
+.button-sidebar .content {
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+}
+
+.button-overlay.open .content,
+.button-sidebar.open .content {
+	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;	
+}
+
+/* Morph Button Style: Overlay */
+.button.button-overlay {
+	margin: 50px auto;
+}
+
+.button-overlay .content {
+	overflow: hidden;
+	background: #e85657;
+}
+
+.button-overlay.open .content {
+	top: 0 !important;
+	left: 0 !important;
+	width: 100%;
+	height: 100%;
+}
+
+/* Morph Button Style: Modal */
+.button-modal::before {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 800;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+	pointer-events: none;
+}
+
+.button-modal.open::before {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.button-modal.active::before {
+	z-index: 1800;
+}
+
+.button-modal .content {
+	overflow: hidden;
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+.button-modal.open .content {
+	top: 50% !important;
+	left: 50% !important;
+	margin: -210px 0 0 -300px;
+	width: 600px;
+	height: 420px;
+	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	max-width: 100%;
+}
+
+/* Colors and sizes for individual modals */
+.button.button-modal-1 {
+	float: left;
+}
+
+.button.button-modal-2,
+.button.button-modal-3 {
+	display: inline-block;
+	margin: 0;
+}
+
+.button-modal-1 > button,
+.button-modal-1 .content {
+	background-color: #553445;
+}
+.button-modal-2 > button, 
+.button-modal-2 .content, 
+.button-modal-3 > button, 
+.button-modal-3 .content {
+  background-color: #fff;
+  color: #000;
+}
+
+.button-modal-4 {
+	display: inline-block;
+}
+
+.button-modal-4 > button,
+.button-modal-4 .content {
+	background-color: #faf1e0;
+	color: #553445;
+}
+
+.button-modal-4 > button span,
+.button-modal-4 .clone {
+	padding-left: 10px;
+	color: #286f81;
+}
+
+.button-modal-4 .clone {
+	position: absolute;
+	right: 34px;
+	bottom: 30px;
+	z-index: 100;
+	letter-spacing: 1px;
+	font-weight: 700;
+	-webkit-transition: bottom 0.4s 0.1s, right 0.4s 0.1s;
+	transition: bottom 0.4s 0.1s, right 0.4s 0.1s;
+}
+
+.button-modal-4.open .clone,
+.no-js .button-modal-4 .clone {
+	right: 10px;
+	bottom: 10px;
+}
+
+.button-modal-1::before {
+	background: rgba(240,221,204,0.7);
+}
+
+.button-modal-2.open .content {
+	margin: -210px 0 0 -170px;
+	width: 440px;
+	height: 420px;
+	max-width: 100%;
+}
+
+.button-modal-3.open .content {
+	margin: -255px 0 0 -210px;
+	width: 420px;
+	height: 510px;
+	max-width: 100%;
+}
+
+.button-modal-3.open .content > div {
+	height: 420px;
+}
+
+.button-modal-2.open .content > div,
+.button-modal-3.open .content > div {
+ 	-webkit-transition: opacity 0.3s 0.3s;
+	transition: opacity 0.3s 0.3s;
+}
+
+.button-modal-4.open .content {
+	margin: -200px 0 0 -320px;
+	width: 640px;
+	height: 400px;
+}
+
+/* Morph Button Style: In the content flow */
+.button-inflow {
+	overflow: hidden;
+	max-width: 100%;
+	height: 70px;
+}
+
+.button-inflow > button {
+	width: 100%;
+	line-height: 70px;
+}
+
+.button-inflow .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.button-inflow .content .clone {
+	padding: 0;
+	font-weight: 700;
+	font-size: 1.5em;
+	line-height: 70px;
+}
+
+/* Colors and sizes for individual in flow buttons */
+.button-inflow-1 {
+	width: 600px;
+	margin: 2em auto;
+	-webkit-transition: height 0.5s cubic-bezier(0.7,0,0.3,1);
+	transition: height 0.5s cubic-bezier(0.7,0,0.3,1);
+}
+
+.button-inflow-1 > button span {
+	visibility: hidden;
+}
+
+.button-inflow-1 .content .clone {
+	color: #f9f6e5;
+	background: #e85657;
+}
+
+.button-inflow-2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 220px;
+	background-color: #fef0e3;
+	-webkit-transition: height 0.3s, width 0.3s, -webkit-transform 0.3s;
+	transition: height 0.3s, width 0.3s, transform 0.3s;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.button-inflow-2 > button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	color: #e75854;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.button-inflow-2.open > button {
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.button-inflow-2 .content {
+	width: 260px;
+	height: 200px;
+}
+
+.button-inflow-2.open {
+	width: 260px;
+}
+
+/* Morph Button Style: Sidebar */
+.button-sidebar,
+.button-sidebar .content {
+	width: 60px;
+	height: 60px;
+}
+
+.button-sidebar {
+	position: fixed;
+	bottom: 50px;
+	left: 50px;
+}
+
+.button-sidebar > button {
+	line-height: 60px;
+	font-size: 1.6em;
+	padding: 0;
+}
+
+.button-sidebar .content {
+	background: #e85657;
+}
+
+.button-sidebar.open .content {
+	top: 0 !important;
+	left: 0 !important;
+	width: 300px;
+	height: 100%;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+/* Let's add some nice easing for all cases */
+.button .content,
+.button.open .content,
+.button-modal-4 .clone {
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+/* Helper classes */
+.noscroll {
+	overflow: hidden;
+}
+
+.button-overlay.scroll .content {
+	overflow-y: scroll;
+}
+
+.button-sidebar.scroll .content {
+	overflow: auto;
+}
+
+/* No JS fallback: let's hide the button and show the content */
+.no-js .button > button {
+	display: none;
+}
+
+.no-js .button {
+	margin: 10px 0;
+	float: none;
+}
+
+.no-js .button,
+.no-js .button .content,
+.no-js .button .content > div {
+	position: relative;
+	width: auto;
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+	top: auto;
+	left: auto;
+	-webkit-transform: none;
+	transform: none;
+	pointer-events: auto;
+}
+
+.no-js .button .content .icon-close {
+	display: none;
+}
+
+.no-js .button-sidebar {
+	width: 300px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	height: 100%;
+	background: #e85657;
+	overflow: auto;
+}
+
+.no-transition {
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+.cd-title {
+  position: relative;
+  height: 160px;
+  line-height: 230px;
+  text-align: center;
+}
+.cd-title h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .cd-title {
+    line-height: 250px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-title {
+    height: 200px;
+    line-height: 300px;
+  }
+  .cd-title h1 {
+    font-size: 3rem;
+  }
+}
+
+.cd-headline {
+  font-size: 2rem;
+  line-height: 1;
+  margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .cd-headline {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-headline {
+    font-size: 4rem;
+  }
+}
+
+.cd-words-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+.cd-words-wrapper b {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+}
+.cd-words-wrapper b.is-visible {
+  position: relative;
+}
+.no-js .cd-words-wrapper b {
+  opacity: 0;
+}
+.no-js .cd-words-wrapper b.is-visible {
+  opacity: 1;
+}
+
+.cd-headline.clip span {
+  display: inline-block;
+  padding: .2em 0;
+}
+.cd-headline.clip .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+.cd-headline.clip .cd-words-wrapper::after {
+  background-color: #333;
+  content: "";
+  height: 90%;
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 4px;
+}
+.cd-headline.clip b {
+  opacity: 0;
+}
+.cd-headline.clip b.is-visible {
+  opacity: 1;
+}
