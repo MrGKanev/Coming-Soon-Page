@@ -2,7 +2,7 @@
 "use strict";
 
 /*--------------------------------------------------------------
-  1. CUSTOM FUNCTION
+   CUSTOM FUNCTION
 --------------------------------------------------------------*/
 
 /* is_exist() */
@@ -54,20 +54,20 @@ if ( $('.single_popup').length > 0 ) {
 function contentToggle($this){
 
   var self    = $this,
-    details   = $('#marshall-details'),
-    content   = $('#marshall-animate-area'),
-    close     = $('#marshall-close-content'),
+    details   = $('#details'),
+    content   = $('#animate-area'),
+    close     = $('#close-content'),
     hide      = content.data('hide'),
     animation = details.data('animation');
 
-  if ( self.hasClass('marshall-animate-open') ) {
+  if ( self.hasClass('animate-open') ) {
     close.hide(0);
-    self.removeClass('marshall-animate-open');
+    self.removeClass('animate-open');
     content.removeClass(hide).addClass(animation).addClass('mrs-active');
     details.removeClass(animation).addClass(hide);
   } else {
     close.delay(600).show(0);
-    self.addClass('marshall-animate-open');
+    self.addClass('animate-open');
     content.removeClass(animation).addClass(hide);
     details.removeClass(hide).addClass(animation).addClass('mrs-active');
   }
@@ -77,7 +77,7 @@ function contentToggle($this){
 /*--------------------------------------------------------------
    CONTENT APPEAR ANIMATION INIT
 --------------------------------------------------------------*/
-$(document).on("click", ".marshall-animate-btn", function(e){
+$(document).on("click", ".animate-btn", function(e){
   e.preventDefault();
   var self    = $(this);
 
@@ -93,27 +93,27 @@ $(document).on("click", ".marshall-animate-btn", function(e){
 function clickToSlide($this){
   
   var self    = $this,
-    content   = $('#marshall-details'),
-    col   = $('.marshall-col-content'),
-    close     = $('#marshall-close-content-slide'),
+    content   = $('#details'),
+    col   = $('.col-content'),
+    close     = $('#close-content-slide'),
     animation = content.data('animation');
 
 
-  if ( self.hasClass('marshall-animate-open') ) {
+  if ( self.hasClass('animate-open') ) {
     close.hide(0);
-    self.removeClass('marshall-animate-open');
+    self.removeClass('animate-open');
     content.removeClass(animation);
     col.removeClass('mrs-default-content-off');
   } else {
     close.delay(600).show(0);
-    self.addClass('marshall-animate-open');
+    self.addClass('animate-open');
     content.addClass(animation);
     col.addClass('mrs-default-content-off');
   }
 
 }
 
-$(document).on("click", ".marshall-content-view", function(e){
+$(document).on("click", ".content-view", function(e){
   e.preventDefault();
   var self = $(this);
 
@@ -139,7 +139,6 @@ if ( $("#mrs_particles_can").is_exist() ) {
 if ( $('textarea#mrs_message').is_exist() ) {
   $('textarea#mrs_message').textareaAutoSize();
 }
-
 
 /*--------------------------------------------------------------
    PLAX PARALLAX INIT

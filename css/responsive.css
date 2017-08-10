@@ -43,15 +43,6 @@
   visibility: visible;
   width: 100%;
 }
-.main-content {
- position: relative;
-}
-.gallery-item a:hover .mask-overley {
-  border: 100px solid rgba(0, 0, 0, 0.7);
-}
-.the_content {
-  padding: 60px 50px 40px;
-}
 .logo,
 .content {
   margin-left: 50px;
@@ -275,9 +266,6 @@ h1, .h1 {
 }
 .social-column {
     left: 20px;
-}
-.the_content {
-    padding: 45px 20px 40px;
 }
 .button.button-modal-2, .button.button-modal-3 {
   display: inline-block;
