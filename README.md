@@ -1,5 +1,5 @@
-## AntiProxies-Coming-Soon
-This is the coming soon page of AntiProxies. The 
+## Coming Soon
+This is the coming soon page i use on my project. You need a cool comming soon page? Just use it! :)
 
 ##To-Do List
 - [x] Make the rocket go flying
