@@ -21,5 +21,5 @@ This is the coming soon page i use on my project. You need a cool comming soon p
 IE 9+ ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 
 ## Links
- - [Twitter](https://twitter.com/mgknetwork)
- - [Development](https://github.com/MGKNeT/MGKNeT.com)
+ - [Twitter](https://twitter.com/mgknetcom)
+ - [Development](https://github.com/MrGKanev/Coming-Soon-Page/)
